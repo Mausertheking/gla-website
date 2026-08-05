@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Grading Process &amp; Scale — Grading Lab Agency</title>
+<meta name="description" content="How GLA grades a collectible: seven documented stages from submission to return, plus the GLA 10-point grading scale and service levels.">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="container">
+    <nav class="nav" aria-label="Main">
+      <a class="brand" href="index.html" aria-label="Grading Lab Agency — home">
+        <svg class="brand__mark" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <defs><linearGradient id="navMark" x1="24" y1="2" x2="24" y2="46" gradientUnits="userSpaceOnUse"><stop stop-color="#fff"/><stop offset=".35" stop-color="#d6c4ff"/><stop offset=".68" stop-color="#9a6bff"/><stop offset="1" stop-color="#5b23b8"/></linearGradient></defs>
+          <path d="M24 3 42 9.5v16.2C42 36 34.4 42.9 24 45.6 13.6 42.9 6 36 6 25.7V9.5L24 3Z" stroke="url(#navMark)" stroke-width="2"/>
+          <path d="M24 13.5 26.8 23.2 36.5 26 26.8 28.8 24 38.5 21.2 28.8 11.5 26 21.2 23.2Z" fill="url(#navMark)"/>
+        </svg>
+        <span class="brand__text">
+          <span class="brand__name">GLA</span>
+          <span class="brand__tag">Grading Lab Agency</span>
+        </span>
+      </a>
+
+      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open navigation menu">
+        <svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+
+      <ul class="nav__links" id="primary-nav">
+        <li><a class="nav__link" href="index.html">Home</a></li>
+        <li><a class="nav__link" href="services.html">Services</a></li>
+        <li><a class="nav__link" href="process.html" aria-current="page">Process</a></li>
+        <li><a class="nav__link" href="authenticity.html">Certificates</a></li>
+        <li><a class="nav__link" href="about.html">About</a></li>
+        <li><a class="nav__link" href="contact.html">Contact</a></li>
+        <li><a class="btn btn--primary btn--sm nav__cta" href="verify.html">Verify a grade</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="page-head" data-accent="cyan">
+    <div class="container">
+      <ol class="breadcrumb">
+        <li><a href="index.html">Home</a></li>
+        <li>Process</li>
+      </ol>
+      <span class="eyebrow">How grading works</span>
+      <h1>Seven stages, documented end to end</h1>
+      <p class="lead">
+        No item skips a step. Each stage is recorded against your submission so you can see exactly
+        where your collectible is and how it was assessed.
+      </p>
+    </div>
+  </section>
+
+  <!-- ================= Interactive grading desk ================= -->
+  <section class="section" id="grading-desk">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">The grading desk</span>
+        <h2>Step into the room where the grade is decided</h2>
+        <p class="lead">
+          Five instruments do the work, in this order. Click any of them — on the desk or in the
+          list below it — to see exactly what that tool is looking for.
+        </p>
+      </div>
+
+      <div class="desk">
+        <div class="desk__scene">
+          <svg id="desk-scene" class="desk-svg" viewBox="0 36 900 484" role="img"
+               aria-label="Illustration of a grading desk holding cotton gloves, a magnifier, a stereo microscope, a UV inspection lamp and digital calipers, with a graded slab on a stand.">
+            <defs>
+              <linearGradient id="deskWall" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#130f24"/>
+                <stop offset="1" stop-color="#08060f"/>
+              </linearGradient>
+              <linearGradient id="deskTop" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#9a6bff" stop-opacity=".22"/>
+                <stop offset="1" stop-color="#07060d" stop-opacity="0"/>
+              </linearGradient>
+              <linearGradient id="deskEdge" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0" stop-color="#9a6bff" stop-opacity="0"/>
+                <stop offset=".5" stop-color="#d6c4ff" stop-opacity=".8"/>
+                <stop offset="1" stop-color="#9a6bff" stop-opacity="0"/>
+              </linearGradient>
+              <linearGradient id="uvCone" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#d6c4ff" stop-opacity=".85"/>
+                <stop offset="1" stop-color="#7c3aed" stop-opacity="0"/>
+              </linearGradient>
+              <radialGradient id="lensG" cx=".35" cy=".28" r=".85">
+                <stop offset="0" stop-color="#ffffff" stop-opacity=".2"/>
+                <stop offset="1" stop-color="#7c3aed" stop-opacity=".14"/>
+              </radialGradient>
+              <radialGradient id="uvGlow">
+                <stop offset="0" stop-color="#d6c4ff" stop-opacity=".9"/>
+                <stop offset="1" stop-color="#7c3aed" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
+
+            <!-- Room -->
+            <rect width="900" height="520" fill="url(#deskWall)"/>
+            <ellipse cx="450" cy="40" rx="400" ry="190" fill="url(#uvGlow)" opacity=".09"/>
+            <rect x="0" y="400" width="900" height="120" fill="#0a0813"/>
+            <rect x="0" y="400" width="900" height="72" fill="url(#deskTop)" opacity=".45"/>
+            <path d="M0 400h900" stroke="url(#deskEdge)" stroke-width="2.5" fill="none"/>
+
+            <!-- UV beam, brightens when the lamp is selected -->
+            <path class="uv-cone" d="M756 150 664 400 836 400 790 142Z" fill="url(#uvCone)"/>
+
+            <!-- Graded slab on a stand (scene dressing) -->
+            <g opacity=".85">
+              <ellipse class="shadow" cx="385" cy="400" rx="46" ry="7"/>
+              <path class="ln ln--thin" d="M368 400v-22M402 400v-22"/>
+              <rect class="ln fill-deep" x="346" y="266" width="78" height="132" rx="9"/>
+              <rect class="ln--thin fill-soft" x="354" y="274" width="62" height="26" rx="4" stroke="#6f6791"/>
+              <path class="ln--thin" d="M360 282h34M360 291h22"/>
+              <rect class="ln--thin fill-soft" x="354" y="308" width="62" height="82" rx="4" stroke="#6f6791"/>
+              <path class="ln--thin" d="M372 340h26M372 352h26M372 364h16"/>
+            </g>
+
+            <!-- 1. Gloves -->
+            <g class="tool" data-tool="gloves">
+              <ellipse class="shadow" cx="112" cy="400" rx="70" ry="8"/>
+              <g opacity=".45" transform="translate(22,-8)">
+                <path class="ln" d="M66 400V322a8 8 0 0 1 16 0v22h4v-32a8 8 0 0 1 16 0v32h4v-28a8 8 0 0 1 16 0v28h4v-14a7 7 0 0 1 14 0v22q8 4 8 14v34Z"/>
+                <path class="ln" d="M148 366q18-6 21 10t-15 18"/>
+              </g>
+              <path class="ln fill-deep" d="M66 400V322a8 8 0 0 1 16 0v22h4v-32a8 8 0 0 1 16 0v32h4v-28a8 8 0 0 1 16 0v28h4v-14a7 7 0 0 1 14 0v22q8 4 8 14v34Z"/>
+              <path class="ln fill-deep" d="M148 366q18-6 21 10t-15 18"/>
+              <path class="ln--thin" d="M68 382h78"/>
+              <g class="tool__badge" transform="translate(112,272)">
+                <circle r="15"/><text x="0" y="5" text-anchor="middle">1</text>
+              </g>
+              <rect class="tool__hit" x="42" y="252" width="156" height="158" rx="16"/>
+            </g>
+
+            <!-- 2. Magnifier / loupe -->
+            <g class="tool" data-tool="loupe">
+              <ellipse class="shadow" cx="516" cy="400" rx="40" ry="7"/>
+              <path class="ln ln--thick" d="M500 316 541 388" stroke-linecap="round"/>
+              <path class="ln--thin" d="M512 336l14 8M520 350l14 8"/>
+              <circle cx="470" cy="286" r="44" fill="#463079"/>
+              <circle cx="470" cy="286" r="44" fill="url(#lensG)"/>
+              <path class="ln--thin ln--bright" d="M450 282h40M450 294h26" opacity=".8"/>
+              <circle class="ln ln--thick" cx="470" cy="286" r="44"/>
+              <circle class="ln--thin" cx="470" cy="286" r="36" stroke="#6f6791"/>
+              <path d="M444 268q14-16 34-10" stroke="#ffffff" stroke-opacity=".45" stroke-width="3" fill="none" stroke-linecap="round"/>
+              <g class="tool__badge" transform="translate(470,214)">
+                <circle r="15"/><text x="0" y="5" text-anchor="middle">2</text>
+              </g>
+              <rect class="tool__hit" x="416" y="194" width="132" height="216" rx="16"/>
+            </g>
+
+            <!-- 3. Stereo microscope -->
+            <g class="tool" data-tool="microscope">
+              <ellipse class="shadow" cx="260" cy="400" rx="76" ry="8"/>
+              <rect class="ln fill-deep" x="200" y="372" width="120" height="28" rx="12"/>
+              <rect class="ln fill-deep" x="288" y="196" width="14" height="180" rx="7"/>
+              <ellipse cx="262" cy="340" rx="20" ry="7" fill="#d6c4ff" opacity=".25"/>
+              <rect class="ln fill-deep" x="216" y="306" width="92" height="12" rx="5"/>
+              <rect class="ln--thin fill-soft" x="244" y="294" width="36" height="12" rx="2"/>
+              <path class="ln" d="M296 212q0-22-22-22h-18"/>
+              <rect class="ln fill-deep" x="234" y="180" width="34" height="56" rx="12"/>
+              <path class="ln fill-deep" d="M243 236h16l-4 16h-8Z"/>
+              <rect class="ln fill-deep" x="240" y="146" width="22" height="38" rx="9"/>
+              <circle class="ln fill-deep" cx="306" cy="266" r="11"/>
+              <circle class="ln fill-deep" cx="306" cy="290" r="7"/>
+              <g class="tool__badge" transform="translate(260,112)">
+                <circle r="15"/><text x="0" y="5" text-anchor="middle">3</text>
+              </g>
+              <rect class="tool__hit" x="200" y="92" width="136" height="318" rx="16"/>
+            </g>
+
+            <!-- 4. UV inspection lamp -->
+            <g class="tool" data-tool="uv">
+              <ellipse class="shadow" cx="834" cy="400" rx="58" ry="8"/>
+              <rect class="ln fill-deep" x="788" y="382" width="92" height="18" rx="9"/>
+              <rect class="ln fill-deep" x="828" y="172" width="12" height="212" rx="6"/>
+              <path class="ln" d="M834 182v-44q0-22-22-22h-20"/>
+              <circle class="ln fill-deep" cx="834" cy="138" r="6"/>
+              <circle class="ln fill-deep" cx="792" cy="116" r="6"/>
+              <g transform="rotate(32 778 130)">
+                <rect class="ln fill-deep" x="756" y="110" width="46" height="38" rx="11"/>
+                <path class="ln--thin" d="M764 148h30"/>
+              </g>
+              <circle cx="772" cy="154" r="16" fill="url(#uvGlow)" opacity=".8"/>
+              <g class="tool__badge" transform="translate(834,66)">
+                <circle r="15"/><text x="0" y="5" text-anchor="middle">4</text>
+              </g>
+              <rect class="tool__hit" x="746" y="46" width="148" height="364" rx="16"/>
+            </g>
+
+            <!-- 5. Digital calipers -->
+            <g class="tool" data-tool="calipers">
+              <ellipse class="shadow" cx="638" cy="400" rx="82" ry="7"/>
+              <g transform="rotate(-5 630 358)">
+                <rect class="ln fill-deep" x="565" y="352" width="132" height="12" rx="4"/>
+                <path class="ln--thin" d="M585 352v-6M600 352v-6M615 352v-6"/>
+                <rect class="ln fill-deep" x="565" y="330" width="12" height="22" rx="3"/>
+                <rect class="ln fill-deep" x="565" y="364" width="14" height="30" rx="3"/>
+                <rect class="ln fill-deep" x="624" y="344" width="36" height="26" rx="5"/>
+                <rect class="ln fill-deep" x="628" y="322" width="10" height="22" rx="3"/>
+                <rect class="ln fill-deep" x="628" y="370" width="12" height="24" rx="3"/>
+                <circle class="ln fill-deep" cx="642" cy="378" r="7"/>
+                <rect class="ln fill-deep" x="652" y="312" width="50" height="30" rx="6"/>
+                <path class="ln--thin" d="M661 324h30M661 333h18"/>
+                <rect class="ln fill-deep" x="697" y="354" width="24" height="7" rx="3"/>
+              </g>
+              <g class="tool__badge" transform="translate(630,282)">
+                <circle r="15"/><text x="0" y="5" text-anchor="middle">5</text>
+              </g>
+              <rect class="tool__hit" x="550" y="262" width="182" height="148" rx="16"/>
+            </g>
+          </svg>
+
+          <div class="tool-chips" role="group" aria-label="Choose a grading tool">
+            <button class="tool-chip" type="button" data-tool="gloves" aria-pressed="true">
+              <span class="tool-chip__num" aria-hidden="true">1</span> Gloves
+            </button>
+            <button class="tool-chip" type="button" data-tool="loupe" aria-pressed="false">
+              <span class="tool-chip__num" aria-hidden="true">2</span> Magnifier
+            </button>
+            <button class="tool-chip" type="button" data-tool="microscope" aria-pressed="false">
+              <span class="tool-chip__num" aria-hidden="true">3</span> Microscope
+            </button>
+            <button class="tool-chip" type="button" data-tool="uv" aria-pressed="false">
+              <span class="tool-chip__num" aria-hidden="true">4</span> UV lamp
+            </button>
+            <button class="tool-chip" type="button" data-tool="calipers" aria-pressed="false">
+              <span class="tool-chip__num" aria-hidden="true">5</span> Calipers
+            </button>
+          </div>
+        </div>
+
+        <aside class="tool-info card" id="tool-info" aria-live="polite">
+          <span class="card__meta" data-tool-step>Step 1 of 5</span>
+          <h3 data-tool-name>Lint-free cotton gloves</h3>
+          <span class="tool-info__role" data-tool-role>Worn before anything is touched</span>
+          <p data-tool-why>
+            Skin transfers oil, salt and moisture that no cleaning process can reverse. Every item is
+            handled with fresh gloves from the moment the parcel is opened until the holder is sealed.
+          </p>
+          <h4 data-tool-list-label>What it prevents</h4>
+          <ul class="check-list" data-tool-list>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Fingerprint etching in coin luster</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Oil haze on foil, holo and refractor surfaces</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Long-term discolouration on comic pages</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Residue trapped under the seal at encapsulation</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Transfer between items in a bulk submission</li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= Timeline ================= -->
+  <section class="section section--alt">
+    <div class="container container--narrow">
+      <div class="section-head">
+        <span class="eyebrow">Stage by stage</span>
+        <h2>Seven steps, every submission</h2>
+      </div>
+      <ol class="timeline">
+        <li class="timeline__item reveal">
+          <span class="timeline__dot">1</span>
+          <div class="timeline__body">
+            <h3>Submit your collectible</h3>
+            <p>
+              Complete a submission form, pack the item using our packaging guidance and send it to us —
+              or hand it over in person in Baku. Every parcel is logged and photographed on arrival.
+            </p>
+          </div>
+        </li>
+        <li class="timeline__item reveal">
+          <span class="timeline__dot">2</span>
+          <div class="timeline__body">
+            <h3>Authentication inspection</h3>
+            <p>
+              Before condition is considered at all, we confirm the item is what it claims to be:
+              print characteristics, materials, seals, dimensions and known counterfeit markers.
+            </p>
+          </div>
+        </li>
+        <li class="timeline__item reveal">
+          <span class="timeline__dot">3</span>
+          <div class="timeline__body">
+            <h3>Professional grading</h3>
+            <p>
+              A grader evaluates the item against the published criteria for its category under
+              controlled lighting and magnification, recording each sub-factor separately.
+            </p>
+          </div>
+        </li>
+        <li class="timeline__item reveal">
+          <span class="timeline__dot">4</span>
+          <div class="timeline__body">
+            <h3>Quality control review</h3>
+            <p>
+              A second reviewer independently checks the assessment. Where the two disagree, the item
+              is re-examined before any grade is finalised.
+            </p>
+          </div>
+        </li>
+        <li class="timeline__item reveal">
+          <span class="timeline__dot">5</span>
+          <div class="timeline__body">
+            <h3>Secure encapsulation</h3>
+            <p>
+              The item is sealed in a tamper-evident GLA holder sized for its category, with a printed
+              label carrying the description, grade and certification number.
+            </p>
+          </div>
+        </li>
+        <li class="timeline__item reveal">
+          <span class="timeline__dot">6</span>
+          <div class="timeline__body">
+            <h3>Certification &amp; online registration</h3>
+            <p>
+              High-resolution images and the full grading record are added to the GLA database, and the
+              certification number becomes verifiable online and by QR code.
+            </p>
+          </div>
+        </li>
+        <li class="timeline__item reveal">
+          <span class="timeline__dot">7</span>
+          <div class="timeline__body">
+            <h3>Return shipment</h3>
+            <p>
+              The graded item is packed in protective material and shipped back insured, with tracking
+              shared as soon as it leaves us.
+            </p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ================= Grading scale ================= -->
+  <section class="section" id="scale">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">The GLA scale</span>
+        <h2>A 10-point scale, applied the same way every time</h2>
+        <p class="lead">
+          Numeric grades run from 10 down to 1. Card and comic grades combine centering, corners,
+          edges and surface; the lowest sub-factor carries the most weight.
+        </p>
+      </div>
+
+      <div class="table-wrap reveal">
+        <table>
+          <caption>GLA numeric grades and what they describe.</caption>
+          <thead>
+            <tr>
+              <th scope="col">Grade</th>
+              <th scope="col">Designation</th>
+              <th scope="col">What it means</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><span class="grade-chip" data-tier="gem">10</span></td><td><strong>Gem Mint</strong></td><td>Virtually flawless. Sharp corners, clean edges, full gloss and centering within the tightest tolerance.</td></tr>
+            <tr><td><span class="grade-chip" data-tier="mint">9.5</span></td><td><strong>Mint+</strong></td><td>Gem quality held back by one very minor factor, usually centering.</td></tr>
+            <tr><td><span class="grade-chip" data-tier="mint">9</span></td><td><strong>Mint</strong></td><td>One small flaw visible on close inspection: a light edge nick or slight print imperfection.</td></tr>
+            <tr><td><span class="grade-chip" data-tier="near">8</span></td><td><strong>Near Mint–Mint</strong></td><td>Minor wear on one or two factors; still visually strong from a normal viewing distance.</td></tr>
+            <tr><td><span class="grade-chip" data-tier="near">7</span></td><td><strong>Near Mint</strong></td><td>Light handling evident — slight corner softness or a shallow surface scuff.</td></tr>
+            <tr><td><span class="grade-chip" data-tier="mid">6</span></td><td><strong>Excellent–Near Mint</strong></td><td>Noticeable but modest wear; no creasing, no significant surface damage.</td></tr>
+            <tr><td><span class="grade-chip" data-tier="mid">5</span></td><td><strong>Excellent</strong></td><td>Visible corner and edge wear, minor surface marks, presentable overall.</td></tr>
+            <tr><td><span class="grade-chip" data-tier="low">4</span></td><td><strong>Very Good–Excellent</strong></td><td>Rounded corners, edge wear and light creasing that does not break the surface.</td></tr>
+            <tr><td><span class="grade-chip" data-tier="low">3</span></td><td><strong>Very Good</strong></td><td>Clear handling wear, creasing or scuffing; item remains complete and intact.</td></tr>
+            <tr><td><span class="grade-chip" data-tier="low">2</span></td><td><strong>Good</strong></td><td>Heavy wear, multiple creases, possible small tears or staining.</td></tr>
+            <tr><td><span class="grade-chip" data-tier="low">1</span></td><td><strong>Poor–Fair</strong></td><td>Severe damage. Preserved and certified for authenticity and history rather than condition.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="grid grid--3" style="margin-top: var(--sp-8)">
+        <div class="card reveal" data-accent="amber">
+          <span class="card__meta">Qualifiers</span>
+          <h3>When a grade carries a note</h3>
+          <p>
+            Restoration, trimming, colour touch, authentic-altered and similar findings are recorded as
+            qualifiers on the label rather than hidden inside the number.
+          </p>
+        </div>
+        <div class="card reveal" data-accent="indigo">
+          <span class="card__meta">Authenticity only</span>
+          <h3>Items we authenticate without grading</h3>
+          <p>
+            Autographed memorabilia and certain oversized items receive an authentication result and a
+            Certificate of Authenticity instead of a numeric grade.
+          </p>
+        </div>
+        <div class="card reveal" data-accent="rose">
+          <span class="card__meta">Not genuine</span>
+          <h3>If an item fails authentication</h3>
+          <p>
+            It is not encapsulated and not assigned a grade. We return it with a written explanation of
+            what we found, at no grading charge.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= Service levels ================= -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Service levels</span>
+        <h2>Choose the turnaround that fits your timing</h2>
+        <p>
+          Turnaround is counted from the day your item is checked in, not the day you post it.
+          Current pricing is confirmed when you submit — ask us for a quote.
+        </p>
+      </div>
+
+      <div class="grid grid--3">
+        <div class="card reveal">
+          <span class="card__meta">Standard</span>
+          <h3>Everyday collections</h3>
+          <p>The default route for bulk submissions and collections being catalogued rather than sold immediately.</p>
+          <ul class="check-list" style="margin-top: var(--sp-4)">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg> Full authentication and grading</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg> Premium encapsulation</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg> Online registration and QR code</li>
+          </ul>
+        </div>
+        <div class="card reveal" data-accent="gold" style="border-color: var(--border-brand)">
+          <span class="card__meta">Express</span>
+          <h3>Selling or listing soon</h3>
+          <p>Priority placement in the grading queue for items heading to a sale, auction or trade.</p>
+          <ul class="check-list" style="margin-top: var(--sp-4)">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg> Everything in Standard</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg> Priority queue placement</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg> High-resolution imaging included</li>
+          </ul>
+        </div>
+        <div class="card reveal">
+          <span class="card__meta">On-site</span>
+          <h3>Events &amp; signings</h3>
+          <p>Witnessed authentication and on-the-spot intake at conventions, private signings and shows.</p>
+          <ul class="check-list" style="margin-top: var(--sp-4)">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg> GLA representative present at signing</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg> Certificate of Authenticity issued</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg> Optional grading afterwards</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FAQ ================= -->
+  <section class="section section--alt">
+    <div class="container container--narrow">
+      <div class="section-head">
+        <span class="eyebrow">Before you submit</span>
+        <h2>Common questions</h2>
+      </div>
+
+      <div class="accordion">
+        <details>
+          <summary>How should I package my item?</summary>
+          <div class="accordion__content">
+            <p>
+              Put cards in a penny sleeve inside a semi-rigid holder — never a screw-down or top-loader
+              taped shut. Comics go in a bag and board between two rigid sheets. Sealed games and diecast
+              should be wrapped in bubble and suspended away from the box walls. Use a sturdy outer box
+              with at least 5&nbsp;cm of padding on every side.
+            </p>
+          </div>
+        </details>
+        <details>
+          <summary>Can I clean or press my item first?</summary>
+          <div class="accordion__content">
+            <p>
+              Please don't. Cleaning, pressing and trimming are detectable and will be recorded as
+              alterations, which lowers the grade or fails the item outright. Send it exactly as it is.
+            </p>
+          </div>
+        </details>
+        <details>
+          <summary>What happens if I disagree with a grade?</summary>
+          <div class="accordion__content">
+            <p>
+              You can request a review. The item is re-examined by a grader who did not work on the
+              original assessment. If the review finds an error, the grade is corrected and the item is
+              re-encapsulated at no cost to you.
+            </p>
+          </div>
+        </details>
+        <details>
+          <summary>Is my item insured while you have it?</summary>
+          <div class="accordion__content">
+            <p>
+              Yes. Items are insured from check-in to the moment they are handed to the return carrier.
+              Declare an accurate value on your submission form so cover matches what you sent.
+            </p>
+          </div>
+        </details>
+        <details>
+          <summary>Do you grade items you cannot authenticate?</summary>
+          <div class="accordion__content">
+            <p>
+              No. Authentication always comes first. If we cannot confirm an item is genuine, it is
+              returned unencapsulated with our findings explained in writing.
+            </p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--tight">
+    <div class="container">
+      <div class="cta-band reveal">
+        <h2>Ready when you are</h2>
+        <p class="lead">Start a submission and we will confirm the service level, turnaround and quote before anything is opened.</p>
+        <div class="btn-row">
+          <a class="btn btn--primary" href="contact.html">Start a submission</a>
+          <a class="btn btn--ghost" href="verify.html">Verify a certificate</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a class="brand" href="index.html" aria-label="Grading Lab Agency — home">
+          <svg class="brand__mark" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+            <defs><linearGradient id="footMark" x1="24" y1="2" x2="24" y2="46" gradientUnits="userSpaceOnUse"><stop stop-color="#fff"/><stop offset=".35" stop-color="#d6c4ff"/><stop offset=".68" stop-color="#9a6bff"/><stop offset="1" stop-color="#5b23b8"/></linearGradient></defs>
+            <path d="M24 3 42 9.5v16.2C42 36 34.4 42.9 24 45.6 13.6 42.9 6 36 6 25.7V9.5L24 3Z" stroke="url(#footMark)" stroke-width="2"/>
+            <path d="M24 13.5 26.8 23.2 36.5 26 26.8 28.8 24 38.5 21.2 28.8 11.5 26 21.2 23.2Z" fill="url(#footMark)"/>
+          </svg>
+          <span class="brand__text">
+            <span class="brand__name">GLA</span>
+            <span class="brand__tag">Grading Lab Agency</span>
+          </span>
+        </a>
+        <p>Authentication, grading and secure encapsulation for collectors in Azerbaijan and beyond.</p>
+      </div>
+
+      <div class="footer__col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services.html#trading-cards">Trading cards</a></li>
+          <li><a href="services.html#sports-cards">Sports cards</a></li>
+          <li><a href="services.html#comics">Comic books</a></li>
+          <li><a href="services.html#video-games">Video games</a></li>
+          <li><a href="services.html#autographs">Autographs</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About GLA</a></li>
+          <li><a href="process.html">Grading process</a></li>
+          <li><a href="authenticity.html">Certificates</a></li>
+          <li><a href="verify.html">Verify a grade</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="https://www.instagram.com/gradinglab.agency" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg>
+            @gradinglab.agency</a></li>
+          <li><a href="mailto:info@gradinglab.agency">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>
+            info@gradinglab.agency</a></li>
+          <li><span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            Baku, Azerbaijan</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <span>&copy; <span data-year>2026</span> Grading Lab Agency. All rights reserved.</span>
+      <span class="footer__tagline">Authenticate • Grade • Preserve</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/silk-bg.js" defer></script>
+
+<script src="assets/js/main.js" defer></script>
+<script src="assets/js/gradingroom.js" defer></script>
+</body>
+</html>

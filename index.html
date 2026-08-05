@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Grading Lab Agency — Authenticate. Grade. Preserve.</title>
+<meta name="description" content="Grading Lab Agency (GLA) is Baku's professional authentication and grading company for trading cards, comics, video games, coins, diecast and memorabilia. Trust in every grade.">
+<meta property="og:title" content="Grading Lab Agency — Authenticate. Grade. Preserve.">
+<meta property="og:description" content="Professional authentication, grading and secure encapsulation for collectibles. Every GLA-certified item is verifiable online.">
+<meta property="og:type" content="website">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="container">
+    <nav class="nav" aria-label="Main">
+      <a class="brand" href="index.html" aria-label="Grading Lab Agency — home">
+        <svg class="brand__mark" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <defs><linearGradient id="navMark" x1="24" y1="2" x2="24" y2="46" gradientUnits="userSpaceOnUse"><stop stop-color="#fff"/><stop offset=".35" stop-color="#d6c4ff"/><stop offset=".68" stop-color="#9a6bff"/><stop offset="1" stop-color="#5b23b8"/></linearGradient></defs>
+          <path d="M24 3 42 9.5v16.2C42 36 34.4 42.9 24 45.6 13.6 42.9 6 36 6 25.7V9.5L24 3Z" stroke="url(#navMark)" stroke-width="2"/>
+          <path d="M24 13.5 26.8 23.2 36.5 26 26.8 28.8 24 38.5 21.2 28.8 11.5 26 21.2 23.2Z" fill="url(#navMark)"/>
+        </svg>
+        <span class="brand__text">
+          <span class="brand__name">GLA</span>
+          <span class="brand__tag">Grading Lab Agency</span>
+        </span>
+      </a>
+
+      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open navigation menu">
+        <svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+
+      <ul class="nav__links" id="primary-nav">
+        <li><a class="nav__link" href="index.html" aria-current="page">Home</a></li>
+        <li><a class="nav__link" href="services.html">Services</a></li>
+        <li><a class="nav__link" href="process.html">Process</a></li>
+        <li><a class="nav__link" href="authenticity.html">Certificates</a></li>
+        <li><a class="nav__link" href="about.html">About</a></li>
+        <li><a class="nav__link" href="contact.html">Contact</a></li>
+        <li><a class="btn btn--primary btn--sm nav__cta" href="verify.html">Verify a grade</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ================= Hero ================= -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero__grid">
+        <div>
+          <span class="hero__badge"><span class="dot"></span> Baku, Azerbaijan</span>
+          <h1>
+            <span class="hero__title-line">Every collectible</span>
+            <span class="hero__title-line">has a story.</span>
+            <span class="hero__title-line text-holo">We protect its legacy.</span>
+          </h1>
+          <p class="hero__sub">
+            Grading Lab Agency combines expert authentication, industry-standard grading and
+            tamper-evident encapsulation — so the value of what you own is documented, protected
+            and verifiable anywhere in the world.
+          </p>
+          <div class="btn-row">
+            <a class="btn btn--primary" href="contact.html">
+              Submit a collectible
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-7-7 7 7-7 7"/></svg>
+            </a>
+            <a class="btn btn--ghost" href="verify.html">Verify a certificate</a>
+          </div>
+
+        </div>
+
+        <!-- 3D slab: front face carries the holographic label and the
+             inspection loupe, back face carries the certification record. -->
+        <div class="hero__stage" aria-hidden="true">
+          <div class="slab3d">
+            <div class="slab3d__edge slab3d__edge--l"></div>
+            <div class="slab3d__edge slab3d__edge--r"></div>
+
+            <div class="slab3d__face slab3d__face--front">
+              <div class="slab3d__label">
+                <div class="slab3d__label-text">
+                  <span class="slab3d__item">Doctor Fate</span>
+                  <span class="slab3d__set">Relic Patch Card</span>
+                </div>
+                <div class="slab3d__grade">10<span>GEM MT</span></div>
+                <div class="slab3d__micro"></div>
+                <div class="holo"></div>
+              </div>
+
+              <div class="slab3d__window">
+                <svg viewBox="0 0 220 300"><use href="#glaCardArt"/></svg>
+                <!-- Drop your real card at assets/img/my-card.jpg and it shows
+                     here automatically; until then the SVG above is the fallback
+                     (onerror removes the broken <img> so the SVG stays visible). -->
+                <img class="slab3d__photo" src="assets/img/my-card.jpg" alt="" onerror="this.remove()">
+                <div class="loupe">
+                  <div class="loupe__zoom">
+                    <svg viewBox="0 0 220 300"><use href="#glaCardArt"/></svg>
+                    <img class="slab3d__photo" src="assets/img/my-card.jpg" alt="" onerror="this.remove()">
+                  </div>
+                </div>
+              </div>
+
+              <div class="slab3d__cert">GLA0001005</div>
+            </div>
+
+            <div class="slab3d__face slab3d__face--back">
+              <div class="slab3d__back">
+                <span class="slab3d__back-title">Certification record</span>
+                <dl class="slab3d__specs">
+                  <div><dt>Centering</dt><dd>10</dd></div>
+                  <div><dt>Corners</dt><dd>10</dd></div>
+                  <div><dt>Edges</dt><dd>10</dd></div>
+                  <div><dt>Surface</dt><dd>9.5</dd></div>
+                </dl>
+                <div class="slab3d__qr">
+                  <svg viewBox="0 0 29 29" width="100%" height="100%" shape-rendering="crispEdges">
+                    <rect width="29" height="29" fill="#e9e2ff"/>
+                    <g fill="#150e2e">
+                      <path d="M0 0h7v7H0zM22 0h7v7h-7zM0 22h7v7H0z"/>
+                    </g>
+                    <g fill="#e9e2ff">
+                      <path d="M1 1h5v5H1zM23 1h5v5h-5zM1 23h5v5H1z"/>
+                    </g>
+                    <g fill="#150e2e">
+                      <path d="M2 2h3v3H2zM24 2h3v3h-3zM2 24h3v3H2z"/>
+                      <path d="M9 0h2v2H9zM13 0h2v3h-2zM17 1h2v2h-2zM9 4h4v2H9zM15 5h2v2h-2zM19 4h2v2h-2z"/>
+                      <path d="M0 9h2v2H0zM4 9h3v2H4zM0 13h3v2H0zM1 17h2v2H1zM5 13h2v3H5zM4 18h2v2H4z"/>
+                      <path d="M9 9h3v3H9zM13 10h2v2h-2zM17 9h2v3h-2zM21 10h3v2h-3zM26 9h2v3h-2z"/>
+                      <path d="M9 14h2v2H9zM12 13h3v2h-3zM16 14h3v2h-3zM20 13h2v3h-2zM24 14h4v2h-4z"/>
+                      <path d="M9 18h3v2H9zM13 17h2v3h-2zM17 18h2v2h-2zM21 17h2v3h-2zM25 18h3v2h-3z"/>
+                      <path d="M9 22h2v3H9zM12 23h3v2h-3zM17 22h3v2h-3zM21 23h2v2h-2zM25 22h3v3h-3z"/>
+                      <path d="M9 26h3v2H9zM14 26h2v2h-2zM18 26h3v2h-3zM23 26h2v2h-2zM27 26h2v2h-2z"/>
+                      <path d="M22 8h2v1h-2zM26 5h2v2h-2z"/>
+                    </g>
+                  </svg>
+                </div>
+                <span class="slab3d__back-note">QR verification · gradinglab.agency</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Card artwork, referenced twice: once in the slab, once magnified
+         inside the loupe. Kept in one place so both stay in sync. -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+      <defs>
+        <linearGradient id="cardFrame" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#3a2470"/>
+          <stop offset="1" stop-color="#1d1140"/>
+        </linearGradient>
+        <linearGradient id="cardArtBg" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#4b2f93"/>
+          <stop offset="1" stop-color="#1b0d3a"/>
+        </linearGradient>
+        <linearGradient id="cardEmblem" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#ffffff"/>
+          <stop offset=".45" stop-color="#d6c4ff"/>
+          <stop offset="1" stop-color="#7c3aed"/>
+        </linearGradient>
+        <pattern id="rosette" width="6" height="6" patternUnits="userSpaceOnUse">
+          <circle cx="1.5" cy="1.5" r="1.1" fill="#d6c4ff" opacity=".2"/>
+          <circle cx="4.5" cy="4.5" r="1.1" fill="#9a6bff" opacity=".16"/>
+        </pattern>
+
+        <g id="glaCardArt">
+          <defs>
+            <linearGradient id="dfBlue" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#0a2a6e"/><stop offset=".55" stop-color="#2f6bd6"/><stop offset="1" stop-color="#0a1330"/>
+            </linearGradient>
+            <radialGradient id="dfGlow" cx=".5" cy=".38" r=".72">
+              <stop offset="0" stop-color="#5b93f0" stop-opacity=".55"/><stop offset="1" stop-color="#0a1330" stop-opacity="0"/>
+            </radialGradient>
+            <linearGradient id="dfSilver" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#f6f8fc"/><stop offset=".5" stop-color="#9aa4b6"/><stop offset="1" stop-color="#e8ecf3"/>
+            </linearGradient>
+            <linearGradient id="dfRelic" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#e7be6b"/><stop offset="1" stop-color="#c89f49"/>
+            </linearGradient>
+          </defs>
+          <rect width="220" height="300" rx="10" fill="#0a1330"/>
+          <rect width="220" height="300" rx="10" fill="url(#dfBlue)" opacity=".92"/>
+          <rect width="220" height="300" rx="10" fill="url(#dfGlow)"/>
+          <!-- liquid silk swirls -->
+          <path d="M0 0 H220 V66 C165 96 120 52 80 76 C45 96 20 66 0 90 Z" fill="#12347e" opacity=".75"/>
+          <path d="M0 52 C60 22 140 84 220 44 L220 104 C150 138 70 70 0 108 Z" fill="#2f6bd6" opacity=".5"/>
+          <path d="M0 150 C70 120 150 186 220 150 L220 205 C150 172 70 212 0 186 Z" fill="#0e2a63" opacity=".6"/>
+          <path d="M0 78 C70 50 150 108 220 66" stroke="#e9f1ff" stroke-width="2" fill="none" opacity=".55"/>
+          <path d="M0 118 C70 90 150 156 220 112" stroke="#a8c8ff" stroke-width="1.4" fill="none" opacity=".5"/>
+          <path d="M0 172 C80 146 150 204 220 168" stroke="#dceaff" stroke-width="1.2" fill="none" opacity=".4"/>
+          <!-- silver holo strip with tiny icons -->
+          <rect x="8" y="198" width="204" height="94" rx="8" fill="#cdd8ea" opacity=".12"/>
+          <g fill="#e7edf7" opacity=".28">
+            <circle cx="28" cy="255" r="3"/><circle cx="45" cy="247" r="2"/><circle cx="60" cy="258" r="2.4"/>
+            <circle cx="180" cy="250" r="3"/><circle cx="195" cy="260" r="2"/><circle cx="165" cy="256" r="2"/>
+          </g>
+          <!-- shield relic patch -->
+          <path d="M110 90 L184 108 C184 174 154 218 110 246 C66 218 36 174 36 108 Z" fill="url(#dfSilver)"/>
+          <path d="M110 98 L176 114 C176 170 150 210 110 235 C70 210 44 170 44 114 Z" fill="#1fb6d6"/>
+          <path d="M110 105 L170 119 C170 168 146 205 110 228 C74 205 50 168 50 119 Z" fill="url(#dfRelic)"/>
+          <g stroke="#b98e3e" stroke-width="1" opacity=".32" fill="none">
+            <path d="M64 140 H156"/><path d="M62 160 H158"/><path d="M70 180 H150"/>
+          </g>
+          <path d="M110 105 L170 119 C160 120 130 124 110 124 C90 124 60 120 50 119 Z" fill="#ffffff" opacity=".18"/>
+          <!-- top-left emblem (generic star, not a trademark) -->
+          <circle cx="24" cy="24" r="10" fill="#0b1430" stroke="url(#dfSilver)" stroke-width="1.2"/>
+          <path d="M24 18l1.8 4.6 4.9.3-3.8 3 1.3 4.7-4.2-2.6-4.2 2.6 1.3-4.7-3.8-3 4.9-.3z" fill="#e9f1ff" opacity=".85"/>
+          <!-- top-right faint title lines -->
+          <g fill="#dbe6ff" opacity=".5">
+            <rect x="150" y="16" width="54" height="2.4" rx="1.2"/><rect x="158" y="22" width="46" height="2" rx="1"/>
+            <rect x="150" y="28" width="54" height="2" rx="1"/><rect x="160" y="34" width="44" height="2" rx="1"/>
+          </g>
+          <!-- nameplate -->
+          <rect x="56" y="250" width="108" height="21" rx="10.5" fill="#0b1430" stroke="url(#dfSilver)" stroke-width="1.4"/>
+          <text x="110" y="264.5" text-anchor="middle" font-family="Outfit, Segoe UI, sans-serif" font-size="11" font-weight="600" letter-spacing="1.2" fill="#ffffff">Doctor Fate</text>
+        </g>
+      </defs>
+    </svg>
+  </section>
+
+  <!-- ================= Pillars ================= -->
+  <section class="section section--tight">
+    <div class="container">
+      <div class="grid grid--4">
+        <div class="card reveal" data-accent="cyan">
+          <div class="card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3M8 11l2 2 4-4"/></svg>
+          </div>
+          <h3>Expert authentication</h3>
+          <p>Advanced tools and trained eyes verify every detail before a grade is ever assigned.</p>
+        </div>
+        <div class="card reveal" data-accent="gold">
+          <div class="card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+          </div>
+          <h3>Accurate grading</h3>
+          <p>Industry-standard criteria applied consistently, so a GLA grade means the same thing every time.</p>
+        </div>
+        <div class="card reveal" data-accent="violet">
+          <div class="card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          </div>
+          <h3>Premium encapsulation</h3>
+          <p>Tamper-evident, archival-grade holders that protect condition for the long term.</p>
+        </div>
+        <div class="card reveal" data-accent="emerald">
+          <div class="card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3h-3zM21 21h-3v-3M17 21h.01M21 17h.01"/></svg>
+          </div>
+          <h3>Digital verification</h3>
+          <p>A unique certification number and QR code let anyone confirm authenticity in seconds.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= Services ================= -->
+  <section class="section" id="services">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">What we grade</span>
+        <h2>Grading for the collectibles you actually collect</h2>
+        <p class="lead">
+          From first-edition holo cards to factory-sealed cartridges, each category has its own
+          inspection criteria — and its own dedicated holder.
+        </p>
+      </div>
+
+      <div class="grid grid--3">
+        <a class="card reveal" data-accent="violet" href="services.html#trading-cards">
+          <div class="card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.57 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></svg>
+          </div>
+          <h3>Trading cards</h3>
+          <p>Pokémon, One Piece, Yu-Gi-Oh!, Magic, Lorcana, Dragon Ball and wider TCG/CCG collections.</p>
+        </a>
+
+        <a class="card reveal" data-accent="sky" href="services.html#sports-cards">
+          <div class="card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6M18 9h1.5a2.5 2.5 0 0 0 0-5H18M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
+          </div>
+          <h3>Sports cards</h3>
+          <p>Basketball, football, baseball, soccer, UFC, Formula 1 and hockey — rookies to vintage.</p>
+        </a>
+
+        <a class="card reveal" data-accent="rose" href="services.html#comics">
+          <div class="card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>
+          </div>
+          <h3>Comic books</h3>
+          <p>Cover, spine, page quality and restoration detection, sealed in an archival comic case.</p>
+        </a>
+
+        <a class="card reveal" data-accent="cyan" href="services.html#video-games">
+          <div class="card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 12h4m-2-2v4M15 13h.01M18 11h.01"/><path d="M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5Z"/></svg>
+          </div>
+          <h3>Video games</h3>
+          <p>Factory-sealed and complete titles for PlayStation, Xbox, Nintendo, Sega, Atari and PC.</p>
+        </a>
+
+        <a class="card reveal" data-accent="amber" href="services.html#diecast">
+          <div class="card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></svg>
+          </div>
+          <h3>Diecast &amp; toys</h3>
+          <p>Hot Wheels, Matchbox, Mini GT, Tomica, Auto World and limited-edition diecast.</p>
+        </a>
+
+        <a class="card reveal" data-accent="gold" href="services.html#coins">
+          <div class="card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="8" r="6"/><path d="M18.09 10.37A6 6 0 1 1 10.34 18"/><path d="M7 6h1v4m6.71 3.88.7.71-2.82 2.82"/></svg>
+          </div>
+          <h3>Coins</h3>
+          <p>Strike quality, luster, surface preservation, wear and authenticity — sealed in capsule.</p>
+        </a>
+
+        <a class="card reveal" data-accent="emerald" href="services.html#banknotes">
+          <div class="card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2"/><path d="M6 12h.01M18 12h.01"/></svg>
+          </div>
+          <h3>Banknotes</h3>
+          <p>Paper quality, centering, folds, stains and print quality for collectible currency.</p>
+        </a>
+
+        <a class="card reveal" data-accent="indigo" href="services.html#autographs">
+          <div class="card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
+          </div>
+          <h3>Autographs</h3>
+          <p>Authentication for signed memorabilia, plus witnessed signing at selected events.</p>
+        </a>
+
+        <a class="card reveal" data-accent="violet" href="services.html">
+          <div class="card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+          </div>
+          <h3>And more</h3>
+          <p>Have something unusual? Send us the details and we will tell you how we would handle it.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= Process ================= -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-head text-center">
+        <span class="eyebrow">Our process</span>
+        <h2>Five stages. One consistent standard.</h2>
+        <p>Every item follows the same structured path from your hands to its sealed holder and back.</p>
+      </div>
+
+      <ol class="steps">
+        <li class="step reveal">
+          <span class="step__num">1</span>
+          <h3>Submit</h3>
+          <p>Send your item safely to us, or hand it over in person in Baku.</p>
+        </li>
+        <li class="step reveal">
+          <span class="step__num">2</span>
+          <h3>Authenticate</h3>
+          <p>We verify authenticity using magnification, lighting and reference comparison.</p>
+        </li>
+        <li class="step reveal">
+          <span class="step__num">3</span>
+          <h3>Grade</h3>
+          <p>Graders evaluate condition against published criteria for the category.</p>
+        </li>
+        <li class="step reveal">
+          <span class="step__num">4</span>
+          <h3>Encapsulate</h3>
+          <p>The item is sealed in a tamper-evident GLA holder with its printed label.</p>
+        </li>
+        <li class="step reveal">
+          <span class="step__num">5</span>
+          <h3>Return</h3>
+          <p>Registered in our database, then packed and shipped back to you protected.</p>
+        </li>
+      </ol>
+
+      <div class="btn-row" style="margin-top: var(--sp-8); gap: var(--sp-6)">
+        <a class="link-arrow" href="process.html#grading-desk">
+          Explore the grading desk
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-7-7 7 7-7 7"/></svg>
+        </a>
+        <a class="link-arrow" href="process.html">
+          See the full seven-step process and grading scale
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-7-7 7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= Why GLA ================= -->
+  <section class="section">
+    <div class="container">
+      <div class="split">
+        <div>
+          <span class="eyebrow">Built on trust</span>
+          <h2>Why collectors choose GLA</h2>
+          <p class="lead">
+            A grade is only worth what the grader's process is worth. Ours is documented,
+            repeatable and open to inspection — because your collection deserves more than an opinion.
+          </p>
+          <div class="btn-row" style="margin-top: var(--sp-6)">
+            <a class="btn btn--ghost" href="about.html">About the company</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <ul class="check-list">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg> Professional, published grading standards</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg> Tamper-evident holders with secure seals</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg> Unique certification number on every item</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg> Online verification database and QR codes</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg> High-resolution imaging of every graded item</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg> Insured handling from intake to return</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg> A transparent process you can ask questions about</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= Verification ================= -->
+  <section class="section" id="verify">
+    <div class="container">
+      <div class="verify-panel reveal">
+        <div class="section-head" style="margin-bottom: var(--sp-6)">
+          <span class="eyebrow">Online verification</span>
+          <h2>Check any GLA certification number</h2>
+          <p>
+            Every certified collectible is registered in our database. Enter the number printed on the
+            label — or scan the QR code on the holder — to see the grade, category and certification date.
+          </p>
+        </div>
+
+        <form id="verify-form" novalidate>
+          <div class="verify-form">
+            <div class="field">
+              <label class="field__label" for="cert-number">Certification number</label>
+              <input class="input mono" id="cert-number" name="cert" type="text"
+                     inputmode="latin" autocomplete="off" spellcheck="false"
+                     placeholder="GLA0001005"
+                     aria-describedby="cert-hint cert-error">
+              <span class="field__hint" id="cert-hint">Three letters followed by seven digits.</span>
+              <span class="field__error" id="cert-error" role="alert"></span>
+            </div>
+            <button class="btn btn--primary" type="submit">
+              Verify
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+            </button>
+          </div>
+        </form>
+
+        <div class="tags" style="margin-top: var(--sp-4)">
+          <span class="field__hint" style="margin:0">Try a sample:</span>
+          <button class="tag tag--brand" type="button" data-cert-sample="GLA0001005">GLA0001005</button>
+          <button class="tag tag--brand" type="button" data-cert-sample="GLA0001007">GLA0001007</button>
+        </div>
+
+        <div class="verify-result" id="verify-result" aria-live="polite"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CTA ================= -->
+  <section class="section section--tight">
+    <div class="container">
+      <div class="cta-band reveal">
+        <h2>More than a grade. <span class="text-chrome">We preserve history.</span></h2>
+        <p class="lead">
+          Tell us what you are holding and we will walk you through submission, turnaround and pricing.
+        </p>
+        <div class="btn-row">
+          <a class="btn btn--primary" href="contact.html">Start a submission</a>
+          <a class="btn btn--ghost" href="services.html">Browse services</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a class="brand" href="index.html" aria-label="Grading Lab Agency — home">
+          <svg class="brand__mark" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+            <defs><linearGradient id="footMark" x1="24" y1="2" x2="24" y2="46" gradientUnits="userSpaceOnUse"><stop stop-color="#fff"/><stop offset=".35" stop-color="#d6c4ff"/><stop offset=".68" stop-color="#9a6bff"/><stop offset="1" stop-color="#5b23b8"/></linearGradient></defs>
+            <path d="M24 3 42 9.5v16.2C42 36 34.4 42.9 24 45.6 13.6 42.9 6 36 6 25.7V9.5L24 3Z" stroke="url(#footMark)" stroke-width="2"/>
+            <path d="M24 13.5 26.8 23.2 36.5 26 26.8 28.8 24 38.5 21.2 28.8 11.5 26 21.2 23.2Z" fill="url(#footMark)"/>
+          </svg>
+          <span class="brand__text">
+            <span class="brand__name">GLA</span>
+            <span class="brand__tag">Grading Lab Agency</span>
+          </span>
+        </a>
+        <p>Authentication, grading and secure encapsulation for collectors in Azerbaijan and beyond.</p>
+      </div>
+
+      <div class="footer__col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services.html#trading-cards">Trading cards</a></li>
+          <li><a href="services.html#sports-cards">Sports cards</a></li>
+          <li><a href="services.html#comics">Comic books</a></li>
+          <li><a href="services.html#video-games">Video games</a></li>
+          <li><a href="services.html#autographs">Autographs</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About GLA</a></li>
+          <li><a href="process.html">Grading process</a></li>
+          <li><a href="authenticity.html">Certificates</a></li>
+          <li><a href="verify.html">Verify a grade</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="https://www.instagram.com/gradinglab.agency" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg>
+            @gradinglab.agency</a></li>
+          <li><a href="mailto:info@gradinglab.agency">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>
+            info@gradinglab.agency</a></li>
+          <li><span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            Baku, Azerbaijan</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <span>&copy; <span data-year>2026</span> Grading Lab Agency. All rights reserved.</span>
+      <span class="footer__tagline">Authenticate • Grade • Preserve</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/silk-bg.js" defer></script>
+
+<script src="assets/js/main.js" defer></script>
+<script src="assets/js/counters.js" defer></script>
+<script src="assets/js/verify.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" role="img" aria-label="Grading Lab Agency">
+  <defs>
+    <linearGradient id="glaLogo" x1="24" y1="2" x2="24" y2="46" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffffff"/>
+      <stop offset=".35" stop-color="#d6c4ff"/>
+      <stop offset=".68" stop-color="#9a6bff"/>
+      <stop offset="1" stop-color="#5b23b8"/>
+    </linearGradient>
+  </defs>
+  <path d="M24 3 42 9.5v16.2C42 36 34.4 42.9 24 45.6 13.6 42.9 6 36 6 25.7V9.5L24 3Z" fill="none" stroke="url(#glaLogo)" stroke-width="2"/>
+  <path d="M24 13.5 26.8 23.2 36.5 26 26.8 28.8 24 38.5 21.2 28.8 11.5 26 21.2 23.2Z" fill="url(#glaLogo)"/>
+</svg>
