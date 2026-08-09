@@ -10,15 +10,15 @@
   'use strict';
 
   var REGISTRY = {
-    GLA0001005: {
-      title: 'Doctor Fate — Relic Patch',
-      set: 'Warner Bros / DC · Relic Patch Card',
+    GLA0000000: {
+      title: 'Doctor Fate',
+      set: '2024 KKW Cosmos WB Anv · Legacy Iconic #8',
       category: 'Trading Cards',
       grade: '10',
-      gradeLabel: 'Gem Mint',
+      gradeLabel: 'Mint',
       certified: '2026-02-14',
       holder: 'GLA Premium Slab',
-      subgrades: { Centering: '10', Corners: '10', Edges: '10', Surface: '9.5' }
+      subgrades: { Centering: '10', Corners: '10', Edges: '10', Surface: '10' }
     },
     GLA0001006: {
       title: 'Michael Jordan Refractor #139',
@@ -136,7 +136,7 @@
   function renderNotFound(cert) {
     result.innerHTML =
       '<div class="result-state result-state--error">' + ICON_ALERT +
-      '<div><strong>No record found for ' + escapeHtml(cert) + '.</strong><br>' +
+      '<div><strong>No record found.</strong> <span class="mono">' + escapeHtml(cert) + '</span><br>' +
       'Check the number printed on the label or the QR code on the holder. If the number is correct and this item is presented as GLA-certified, ' +
       '<a href="contact.html">contact us</a> — it may be counterfeit.</div></div>';
   }

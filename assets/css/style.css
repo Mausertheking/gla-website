@@ -427,6 +427,13 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 }
 .brand:hover { color: var(--text); }
 .brand__mark { width: 40px; height: 40px; flex: none; }
+/* New GLA logo lockup (transparent PNG) — sits on any background. */
+.brand__logo {
+  height: 46px;
+  width: auto;
+  display: block;
+}
+@media (max-width: 1040px) { .brand__logo { height: 40px; } }
 .brand__text { display: flex; flex-direction: column; line-height: 1.05; }
 .brand__name {
   font-family: var(--font-display);
@@ -477,6 +484,39 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 }
 
 .nav__cta { margin-left: var(--sp-2); }
+
+/* Language switcher (EN / AZ / RU) — injected into the nav by i18n.js */
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  margin-left: var(--sp-3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+  background: var(--surface);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+.lang-switch__btn {
+  min-height: 36px;
+  padding: 0 10px;
+  background: transparent;
+  border: 0;
+  color: var(--text-muted);
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: color var(--dur) var(--ease-out), background-color var(--dur) var(--ease-out);
+}
+.lang-switch__btn:hover { color: var(--text); }
+.lang-switch__btn.is-active { background: var(--brand-sweep); color: #fff; }
+
+@media (max-width: 1040px) {
+  /* Keep the switcher visible in the top bar beside the menu button. */
+  .lang-switch { margin-left: auto; margin-right: var(--sp-2); }
+}
 
 .nav__toggle {
   display: none;

@@ -14,7 +14,8 @@
 
   var status = document.getElementById('form-status');
   var submitBtn = form.querySelector('button[type="submit"]');
-  var CONTACT_EMAIL = form.getAttribute('data-fallback-email') || 'info@gradinglab.agency';
+  var CONTACT_EMAIL = (window.GLA_CONFIG && window.GLA_CONFIG.contactEmail) ||
+    form.getAttribute('data-fallback-email') || 'info.gradinglabagency@gmail.com';
 
   function fieldOf(el) { return el.closest('.field'); }
 
@@ -99,33 +100,10 @@
     var data = {};
     fields.forEach(function (el) { data[el.name] = el.value.trim(); });
 
-    submitBtn.disabled = true;
-    setStatus('Sending your enquiry…', 'loading');
-
-    var endpoint = form.getAttribute('data-endpoint');
-
-    if (!endpoint) {
-      mailtoFallback(data);
-      submitBtn.disabled = false;
-      setStatus('Your email app should now be open with the message ready to send. ' +
-        'If nothing happened, write to ' + CONTACT_EMAIL + ' directly.', null);
-      return;
-    }
-
-    fetch(endpoint, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-      body: JSON.stringify(data)
-    })
-      .then(function (res) {
-        if (!res.ok) throw new Error('Request failed: ' + res.status);
-        form.reset();
-        setStatus('Thank you — your enquiry has been received. We reply within one business day.', null);
-      })
-      .catch(function () {
-        setStatus('We could not send that automatically. Please email ' + CONTACT_EMAIL +
-          ' and we will pick it up from there.', 'error');
-      })
-      .finally(function () { submitBtn.disabled = false; });
+    // Open the visitor's email app (Gmail, Mail, Outlook…) with the enquiry
+    // pre-filled and addressed to us. No backend — works on static hosting.
+    mailtoFallback(data);
+    setStatus('Your email app is opening with your enquiry ready to send — just press Send. ' +
+      'If nothing opens, email ' + CONTACT_EMAIL + ' directly.', null);
   });
 })();
