@@ -10,9 +10,9 @@
    with the message pre-filled, addressed to contactEmail below.
    ------------------------------------------------------------------------- */
 window.GLA_CONFIG = {
-  // Supabase
-  supabaseUrl: '',
-  supabaseAnonKey: '',
+  // Supabase (publishable key is safe to be public; never put the secret key here)
+  supabaseUrl: 'https://lgecsarpfviqvjfvyori.supabase.co',
+  supabaseAnonKey: 'sb_publishable_xT8U-WRShUnZEBBnLlmdAQ_1iic0IqQ',
   certRpc: 'verify_cert',
 
   // Contact form recipient
