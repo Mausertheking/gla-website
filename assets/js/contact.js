@@ -100,8 +100,41 @@
     var data = {};
     fields.forEach(function (el) { data[el.name] = el.value.trim(); });
 
-    // Open the visitor's email app (Gmail, Mail, Outlook…) with the enquiry
-    // pre-filled and addressed to us. No backend — works on static hosting.
+    var cfg = window.GLA_CONFIG || {};
+
+    // Real send via Web3Forms when configured — submissions are emailed to the
+    // inbox tied to the access key (set web3formsKey in assets/js/config.js).
+    if (cfg.web3formsKey) {
+      submitBtn.disabled = true;
+      setStatus('Sending your enquiry…', 'loading');
+      var payload = {
+        access_key: cfg.web3formsKey,
+        subject: 'GLA submission enquiry — ' + (data.service || 'General'),
+        from_name: data.name || 'GLA website',
+        replyto: data.email || ''
+      };
+      Object.keys(data).forEach(function (k) { payload[k] = data[k]; });
+
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify(payload)
+      })
+        .then(function (res) { return res.json(); })
+        .then(function (json) {
+          if (json && json.success) {
+            form.reset();
+            setStatus('Thank you — your enquiry has been sent. We reply within one business day.', null);
+          } else { throw new Error('failed'); }
+        })
+        .catch(function () {
+          setStatus('We could not send that automatically. Please email ' + CONTACT_EMAIL + ' directly.', 'error');
+        })
+        .finally(function () { submitBtn.disabled = false; });
+      return;
+    }
+
+    // Not configured yet: open the visitor's email app, pre-filled.
     mailtoFallback(data);
     setStatus('Your email app is opening with your enquiry ready to send — just press Send. ' +
       'If nothing opens, email ' + CONTACT_EMAIL + ' directly.', null);
