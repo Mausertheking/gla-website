@@ -101,42 +101,45 @@
     fields.forEach(function (el) { data[el.name] = el.value.trim(); });
 
     var cfg = window.GLA_CONFIG || {};
+    var toEmail = cfg.contactEmail || CONTACT_EMAIL;
 
-    // Real send via Web3Forms when configured — submissions are emailed to the
-    // inbox tied to the access key (set web3formsKey in assets/js/config.js).
-    if (cfg.web3formsKey) {
-      submitBtn.disabled = true;
-      setStatus('Sending your enquiry…', 'loading');
-      var payload = {
-        access_key: cfg.web3formsKey,
-        subject: 'GLA submission enquiry — ' + (data.service || 'General'),
-        from_name: data.name || 'GLA website',
-        replyto: data.email || ''
-      };
-      Object.keys(data).forEach(function (k) { payload[k] = data[k]; });
+    // Real send via FormSubmit (free, unlimited, no API key) — enquiries are
+    // emailed to toEmail. The /ajax/ endpoint returns JSON so the visitor stays
+    // on the page. One-time: the first submission triggers an activation email
+    // to toEmail that must be confirmed before messages are delivered.
+    submitBtn.disabled = true;
+    setStatus('Sending your enquiry…', 'loading');
 
-      fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify(payload)
+    var payload = {
+      name: data.name,
+      email: data.email,
+      phone: data.phone || '—',
+      service: data.service || '—',
+      quantity: data.quantity || '—',
+      message: data.message,
+      _subject: 'GLA submission enquiry — ' + (data.service || 'General'),
+      _template: 'table',
+      _captcha: 'false'
+    };
+
+    fetch('https://formsubmit.co/ajax/' + encodeURIComponent(toEmail), {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify(payload)
+    })
+      .then(function (res) { return res.json(); })
+      .then(function (json) {
+        if (json && (json.success === true || json.success === 'true')) {
+          form.reset();
+          setStatus('Thank you — your enquiry has been sent. We reply within one business day.', null);
+        } else { throw new Error('failed'); }
       })
-        .then(function (res) { return res.json(); })
-        .then(function (json) {
-          if (json && json.success) {
-            form.reset();
-            setStatus('Thank you — your enquiry has been sent. We reply within one business day.', null);
-          } else { throw new Error('failed'); }
-        })
-        .catch(function () {
-          setStatus('We could not send that automatically. Please email ' + CONTACT_EMAIL + ' directly.', 'error');
-        })
-        .finally(function () { submitBtn.disabled = false; });
-      return;
-    }
-
-    // Not configured yet: open the visitor's email app, pre-filled.
-    mailtoFallback(data);
-    setStatus('Your email app is opening with your enquiry ready to send — just press Send. ' +
-      'If nothing opens, email ' + CONTACT_EMAIL + ' directly.', null);
+      .catch(function () {
+        // Never lose the enquiry: fall back to the visitor's mail app.
+        mailtoFallback(data);
+        setStatus('Opening your email app to finish sending. If nothing opens, email ' +
+          CONTACT_EMAIL + ' directly.', null);
+      })
+      .finally(function () { submitBtn.disabled = false; });
   });
 })();
