@@ -20,17 +20,16 @@
       holder: 'GLA Premium Slab',
       subgrades: { Centering: '10', Corners: '10', Edges: '10', Surface: '10' }
     },
-    // Autograph authentication example (auth_only: no numeric grade).
+    // Autograph authentication example (auth_only: no numeric grade, no subgrades).
     GLA00002: {
       title: 'Signed Photograph',
       set: 'In-person signing · Baku Expo 2026',
       category: 'Autograph Authentication',
       authOnly: true,
-      grade: 'PASS',
       gradeLabel: 'Authentic',
       certified: '2026-06-07',
       holder: 'GLA Certificate of Authenticity',
-      subgrades: { Method: 'Witnessed in person', Item: '12×8 photograph', Medium: 'Paint pen', 'COA No.': 'GLA-COA-00002' }
+      subgrades: {}
     },
     GLA0001006: {
       title: 'Michael Jordan Refractor #139',
