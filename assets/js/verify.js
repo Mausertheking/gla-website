@@ -10,7 +10,7 @@
   'use strict';
 
   var REGISTRY = {
-    GLA0000000: {
+    GLA00000: {
       title: 'Doctor Fate',
       set: '2024 KKW Cosmos WB Anv · Legacy Iconic #8',
       category: 'Trading Cards',
@@ -19,6 +19,18 @@
       certified: '2026-02-14',
       holder: 'GLA Premium Slab',
       subgrades: { Centering: '10', Corners: '10', Edges: '10', Surface: '10' }
+    },
+    // Autograph authentication example (auth_only: no numeric grade).
+    GLA00002: {
+      title: 'Signed Photograph',
+      set: 'In-person signing · Baku Expo 2026',
+      category: 'Autograph Authentication',
+      authOnly: true,
+      grade: 'PASS',
+      gradeLabel: 'Authentic',
+      certified: '2026-06-07',
+      holder: 'GLA Certificate of Authenticity',
+      subgrades: { Method: 'Witnessed in person', Item: '12×8 photograph', Medium: 'Paint pen', 'COA No.': 'GLA-COA-00002' }
     },
     GLA0001006: {
       title: 'Michael Jordan Refractor #139',
@@ -95,7 +107,7 @@
   /* ------------------------------------------------------------ helpers --- */
   function normalize(value) {
     var raw = String(value || '').toUpperCase().replace(/[\s\-–—_]/g, '');
-    if (/^\d{7}$/.test(raw)) raw = 'GLA' + raw;   // bare digits are fine
+    if (/^\d{5}$/.test(raw)) raw = 'GLA' + raw;   // bare digits are fine
     return raw;
   }
 
@@ -125,6 +137,7 @@
   }
 
   var ICON_CHECK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg>';
+  var ICON_SEAL = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.4 7.8 8 9 4.6-1.2 8-4 8-9V5l-8-3Z"/><path d="m8.5 12 2.3 2.3L15.5 9.7"/></svg>';
   var ICON_ALERT = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16.5v.01"/></svg>';
 
   /* ------------------------------------------------------------ renders --- */
@@ -162,11 +175,17 @@
           '<span class="cert__id">' + escapeHtml(cert) + '</span>' +
         '</div>' +
         '<div class="cert__body">' +
-          '<div class="cert__grade">' +
-            '<span class="cert__grade-value">' + escapeHtml(rec.grade) + '</span>' +
-            '<span class="cert__grade-label">' + escapeHtml(rec.gradeLabel) + '</span>' +
-            (rec.authOnly ? '' : '<span class="cert__grade-scale">GLA 10-point scale</span>') +
-          '</div>' +
+          (rec.authOnly
+            ? '<div class="cert__grade cert__grade--auth">' +
+                ICON_SEAL +
+                '<span class="cert__grade-label">' + escapeHtml(rec.gradeLabel || 'Authentic') + '</span>' +
+                '<span class="cert__grade-scale">Autograph authentication</span>' +
+              '</div>'
+            : '<div class="cert__grade">' +
+                '<span class="cert__grade-value">' + escapeHtml(rec.grade) + '</span>' +
+                '<span class="cert__grade-label">' + escapeHtml(rec.gradeLabel) + '</span>' +
+                '<span class="cert__grade-scale">GLA 10-point scale</span>' +
+              '</div>') +
           '<div class="cert__details">' +
             '<div>' +
               '<h3 class="cert__title">' + escapeHtml(rec.title) + '</h3>' +
@@ -243,9 +262,9 @@
       setFieldError('Enter a certification number to continue.');
       return;
     }
-    if (!/^GLA\d{7}$/.test(cert)) {
+    if (!/^GLA\d{5}$/.test(cert)) {
       result.innerHTML = '';
-      setFieldError('Certification numbers look like GLA0001005 — three letters followed by seven digits.');
+      setFieldError('Certification numbers look like GLA00001 — three letters followed by five digits.');
       return;
     }
 

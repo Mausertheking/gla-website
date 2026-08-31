@@ -1405,6 +1405,15 @@ td strong { color: var(--text); font-family: var(--font-display); }
 }
 .cert__grade-scale { font-size: 0.72rem; color: var(--text-muted); }
 
+/* Autograph / authentication-only certificate — a green "authenticated" seal
+   instead of a numeric grade. */
+.cert__grade--auth {
+  border-color: rgba(52, 211, 153, 0.4);
+  background: radial-gradient(circle at 50% 18%, rgba(52, 211, 153, 0.18), rgba(27, 13, 58, 0.6));
+}
+.cert__grade--auth svg { width: 3.25rem; height: 3.25rem; color: var(--success); }
+.cert__grade--auth .cert__grade-label { color: var(--success); letter-spacing: 0.08em; }
+
 .cert__details { display: grid; gap: var(--sp-4); }
 .cert__title { font-size: 1.35rem; margin-bottom: var(--sp-1); }
 .cert__specs {
