@@ -91,6 +91,18 @@
       certified: '2026-06-07',
       holder: 'GLA Certificate of Authenticity',
       subgrades: { Method: 'Witnessed', Witness: 'GLA Rep.', Medium: 'Paint Pen', 'COA Issued': 'Yes' }
+    },
+    // Not-authentic example (failed authentication). gradeLabel carries the
+    // verdict; renderCertificate() shows a red "Not authentic" result for it.
+    GLA01438: {
+      title: 'Hot Wheels Ferrari F1',
+      set: 'Serial JJJ78-N7C5-G1',
+      category: 'Hot Wheels',
+      authOnly: true,
+      gradeLabel: 'Not Authentic',
+      certified: '2026-10-22',
+      holder: '',
+      subgrades: {}
     }
   };
 
@@ -160,31 +172,47 @@
       'Please check your connection and try again in a moment.</div></div>';
   }
 
+  // A record is "not authentic" when its verdict (grade_label) says so. Lets a
+  // failed authentication be stored in the same table and shown in red.
+  function isNotAuthentic(rec) {
+    return /not\s*authentic|counterfeit|\bfake\b|not\s*genuine|failed/i.test(rec.gradeLabel || '');
+  }
+
   function renderCertificate(cert, rec) {
+    var fail = isNotAuthentic(rec);
     var subgrades = Object.keys(rec.subgrades || {}).map(function (key) {
       return '<div class="subgrade"><dt>' + escapeHtml(key) + '</dt><dd>' +
              escapeHtml(rec.subgrades[key]) + '</dd></div>';
     }).join('');
 
+    var gradeBlock = fail
+      ? '<div class="cert__grade cert__grade--fail">' +
+          ICON_ALERT +
+          '<span class="cert__grade-label">Not authentic</span>' +
+          '<span class="cert__grade-scale">Failed GLA authentication</span>' +
+        '</div>'
+      : (rec.authOnly
+          ? '<div class="cert__grade cert__grade--auth">' +
+              ICON_SEAL +
+              '<span class="cert__grade-label">' + escapeHtml(rec.gradeLabel || 'Authentic') + '</span>' +
+              '<span class="cert__grade-scale">Autograph authentication</span>' +
+            '</div>'
+          : '<div class="cert__grade">' +
+              '<span class="cert__grade-value">' + escapeHtml(rec.grade) + '</span>' +
+              '<span class="cert__grade-label">' + escapeHtml(rec.gradeLabel) + '</span>' +
+              '<span class="cert__grade-scale">GLA 10-point scale</span>' +
+            '</div>');
+
     result.innerHTML =
-      '<article class="cert">' +
+      '<article class="cert' + (fail ? ' cert--fail' : '') + '">' +
         '<div class="cert__top">' +
-          '<span class="cert__status">' + ICON_CHECK +
-            (rec.authOnly ? 'Authenticated' : 'Verified') + '</span>' +
+          '<span class="cert__status' + (fail ? ' cert__status--fail' : '') + '">' +
+            (fail ? ICON_ALERT : ICON_CHECK) +
+            (fail ? 'Not authentic' : (rec.authOnly ? 'Authenticated' : 'Verified')) + '</span>' +
           '<span class="cert__id">' + escapeHtml(cert) + '</span>' +
         '</div>' +
         '<div class="cert__body">' +
-          (rec.authOnly
-            ? '<div class="cert__grade cert__grade--auth">' +
-                ICON_SEAL +
-                '<span class="cert__grade-label">' + escapeHtml(rec.gradeLabel || 'Authentic') + '</span>' +
-                '<span class="cert__grade-scale">Autograph authentication</span>' +
-              '</div>'
-            : '<div class="cert__grade">' +
-                '<span class="cert__grade-value">' + escapeHtml(rec.grade) + '</span>' +
-                '<span class="cert__grade-label">' + escapeHtml(rec.gradeLabel) + '</span>' +
-                '<span class="cert__grade-scale">GLA 10-point scale</span>' +
-              '</div>') +
+          gradeBlock +
           '<div class="cert__details">' +
             '<div>' +
               '<h3 class="cert__title">' + escapeHtml(rec.title) + '</h3>' +
@@ -192,14 +220,16 @@
             '</div>' +
             '<dl class="cert__specs">' +
               '<div class="cert__spec"><dt>Category</dt><dd>' + escapeHtml(rec.category) + '</dd></div>' +
-              '<div class="cert__spec"><dt>Certified</dt><dd>' + escapeHtml(formatDate(rec.certified)) + '</dd></div>' +
-              '<div class="cert__spec"><dt>Encapsulation</dt><dd>' + escapeHtml(rec.holder) + '</dd></div>' +
+              '<div class="cert__spec"><dt>' + (fail ? 'Examined' : 'Certified') + '</dt><dd>' + escapeHtml(formatDate(rec.certified)) + '</dd></div>' +
+              (rec.holder ? '<div class="cert__spec"><dt>Encapsulation</dt><dd>' + escapeHtml(rec.holder) + '</dd></div>' : '') +
             '</dl>' +
             (subgrades ? '<dl class="cert__subgrades">' + subgrades + '</dl>' : '') +
           '</div>' +
         '</div>' +
         '<div class="cert__foot">' +
-          '<span>Record active in the GLA certification database.</span>' +
+          '<span>' + (fail
+            ? 'This item did not pass GLA authentication.'
+            : 'Record active in the GLA certification database.') + '</span>' +
           '<span class="mono">' + escapeHtml(cert) + '</span>' +
         '</div>' +
       '</article>';

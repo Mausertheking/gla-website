@@ -1414,6 +1414,24 @@ td strong { color: var(--text); font-family: var(--font-display); }
 .cert__grade--auth svg { width: 3.25rem; height: 3.25rem; color: var(--success); }
 .cert__grade--auth .cert__grade-label { color: var(--success); letter-spacing: 0.08em; }
 
+/* Not-authentic certificate — a red alert instead of a grade or seal. */
+.cert--fail {
+  border-color: rgba(248, 113, 113, 0.4);
+  background: linear-gradient(160deg, rgba(248, 113, 113, 0.12), rgba(9, 7, 18, 0.9));
+  box-shadow: 0 20px 60px rgba(248, 113, 113, 0.22);
+}
+.cert__status--fail {
+  border-color: rgba(248, 113, 113, 0.45);
+  background: rgba(248, 113, 113, 0.12);
+  color: var(--danger);
+}
+.cert__grade--fail {
+  border-color: rgba(248, 113, 113, 0.4);
+  background: radial-gradient(circle at 50% 18%, rgba(248, 113, 113, 0.2), rgba(27, 13, 58, 0.6));
+}
+.cert__grade--fail svg { width: 3.25rem; height: 3.25rem; color: var(--danger); }
+.cert__grade--fail .cert__grade-label { color: var(--danger); letter-spacing: 0.08em; }
+
 .cert__details { display: grid; gap: var(--sp-4); }
 .cert__title { font-size: 1.35rem; margin-bottom: var(--sp-1); }
 .cert__specs {
